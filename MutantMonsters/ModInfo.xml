@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+    <Name value="MutantMonsters" />
+    <DisplayName value="MutantMonsters" />
+    <Description value="Adds terrifying new mutant zombie variants to the world with unique stats and custom loot drops. Inspired by and special thanks to the Banshee Queen mod!" />
+    <Author value="Aruk" />
+    <Version value="1.0.0" />
+    <Website value="https://www.monoforum.com" />
+    <SkipWithAntiCheat value="false" />
+</xml>

@@ -1,0 +1,306 @@
+<configs>
+
+	<append xpath="/entity_classes">
+
+<entity_class name="Aruk" extends="zombieMutatedInfernal">
+			<property name="SizeScale" value="2.1"/>
+			<property name="Tags" value="entity,Mutant,zombie"/>
+			<!-- <property name="Mesh" value="@:Entities/Zombies/Cop/ZCop.prefab"/> -->
+			<property name="ExperienceGain" value="60000"/>
+			<property name="Mass" value="1000"/>
+			<property name="Weight" value="850"/>
+			<property name="HasRagdoll" value="false"/>
+			<!-- XP strong -->
+			<property name="HandItem" value="MutantenItem"/>
+			<property name="LootDropEntityClass" value="MutantenPack"/>
+			<property name="LootDropProb" value="1"/>
+			<property name="DismemberMultiplierHead" value=".4"/><property name="DismemberMultiplierArms" value=".4"/><property name="DismemberMultiplierLegs" value=".4"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="20000"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+			</effect_group>
+		</entity_class>
+
+
+<entity_class name="MutantenPack"> <!-- 71.72 -->
+	<property name="HideInSpawnMenu" value="true"/>
+	<property name="Mesh" value="@:Entities/LootContainers/zpackPrefab.prefab"/>
+	<property name="ModelType" value="Custom"/>
+	<property name="Prefab" value="Backpack"/>
+	<property name="Class" value="EntityLootContainer"/>
+	<property name="Parent" value="Backpack"/>
+	<property name="IsEnemyEntity" value="false"/>
+	<property name="TimeStayAfterDeath" value="1200"/>
+	<property name="LootList" value="MutantenPack"/>
+	<property name="Faction" value="none"/>
+</entity_class>
+
+<entity_class name="BestMutant" extends="zombieWightInfernal">
+			<property name="SizeScale" value="2.1"/>
+			<property name="Tags" value="entity,Mutant,zombie"/>
+			<property name="ExperienceGain" value="60000"/>
+			<property name="Mass" value="1000"/>
+			<property name="Weight" value="850"/>
+			<property name="HasRagdoll" value="false"/>
+			<!-- XP strong -->
+			<property name="HandItem" value="MutantenItem"/>
+			<property name="LootDropEntityClass" value="BestMPack"/>
+			<property name="LootDropProb" value="1"/>
+			<property name="DismemberMultiplierHead" value=".4"/><property name="DismemberMultiplierArms" value=".4"/><property name="DismemberMultiplierLegs" value=".4"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="21000"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+			</effect_group>
+					<property class="Explosion">
+		<property name="ParticleIndex" value="8"/>
+		<property name="RadiusBlocks" value="20"/>
+		<property name="RadiusEntities" value="20"/>
+		<property name="BlockDamage" value="5000"/>
+		<property name="EntityDamage" value="200"/>
+		<property class="DamageBonus">
+			<property name="earth" value="0"/>
+		</property>
+	</property>
+		</entity_class>
+
+
+<entity_class name="BestMPack"> <!-- 71.72 -->
+	<property name="HideInSpawnMenu" value="true"/>
+	<property name="Mesh" value="@:Entities/LootContainers/zpackPrefab.prefab"/>
+	<property name="ModelType" value="Custom"/>
+	<property name="Prefab" value="Backpack"/>
+	<property name="Class" value="EntityLootContainer"/>
+	<property name="Parent" value="Backpack"/>
+	<property name="IsEnemyEntity" value="false"/>
+	<property name="TimeStayAfterDeath" value="1200"/>
+	<property name="LootList" value="BestMPack"/>
+	<property name="Faction" value="none"/>
+</entity_class>
+<entity_class name="MutantChicken" extends="animalChickenHostile">
+			<property name="SizeScale" value="6"/>
+			<property name="Tags" value="entity,animal,chicken,hostile,perkAT03,perkAT04,perkAT05,boss,Mutant"/>
+			<property name="Prefab" value="@:Entities/Animals/Bird/animalBirdChickenPrefab.prefab"/>
+			<property name="ReplaceMaterial0" value="particleeffects/models/materials/p_glass"/>
+			<property name="ReplaceMaterial1" value="entities/resources/materials/oreshaleboulder"/>
+			<property name="SoundRandom" value="chickenroam"/>
+			<property name="SoundRandomTime" value="15.0"/>	
+			<property name="SoundHurt" value="chickenpain"/>
+			<property name="SoundDeath" value="chickendeath"/>
+			<property name="SoundSense" value=""/>
+			<property name="ExperienceGain" value="60000"/>
+			<property name="Mass" value="1000"/>
+			<property name="Weight" value="850"/>
+			<property name="HasRagdoll" value="false"/>
+			<property name="MaxViewAngle" value="360"/>
+			<!-- XP strong -->
+			<property name="WalkType" value=".4"/>
+			<property name="MoveSpeedAggro" value="0.9, 1.1"/>
+			<property name="HandItem" value="MutantenItem"/>
+			<property name="LootDropEntityClass" value="ChikySack"/>
+			<property name="LootDropProb" value="1"/>
+			<property name="DismemberMultiplierHead" value=".4"/><property name="DismemberMultiplierArms" value=".4"/><property name="DismemberMultiplierLegs" value=".4"/>
+			<property name="DeadBodyHitPoints" value="3000"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="15000"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+			</effect_group>
+			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+			<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="30"/> <!-- animalChicken -->
+			<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="60"/>
+			<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="20"/>
+			<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="20"/>
+			<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="5"/>
+
+		</entity_class>
+
+<entity_class name="ChikySack"> <!-- 71.72 -->
+	<property name="HideInSpawnMenu" value="true"/>
+	<property name="Mesh" value="@:Entities/LootContainers/zpackPrefab.prefab"/>
+	<property name="ModelType" value="Custom"/>
+	<property name="Prefab" value="Backpack"/>
+	<property name="Class" value="EntityLootContainer"/>
+	<property name="Parent" value="Backpack"/>
+	<property name="IsEnemyEntity" value="false"/>
+	<property name="TimeStayAfterDeath" value="1200"/>
+	<property name="LootList" value="ChikySack"/>
+	<property name="Faction" value="none"/>
+</entity_class>
+
+<entity_class name="MutantCop" extends="zombieFatCop">
+			<property name="SizeScale" value="2.1"/>
+			<property name="Tags" value="entity,Mutant,zombie"/>
+			<property name="Mesh" value="@:Entities/Zombies/Cop/ZCop.prefab"/>
+			<property name="ExperienceGain" value="60000"/>
+			<property name="Mass" value="1000"/>
+			<property name="Weight" value="850"/>
+			<property name="HasRagdoll" value="false"/>
+			<!-- XP strong -->
+			<property name="HandItem" value="MutantenItem"/>
+			<property name="LootDropEntityClass" value="CopPack"/>
+			<property name="LootDropProb" value="1"/>
+			<property name="DismemberMultiplierHead" value=".4"/><property name="DismemberMultiplierArms" value=".4"/><property name="DismemberMultiplierLegs" value=".4"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="20000"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+			</effect_group>
+					<property class="Explosion">
+		<property name="ParticleIndex" value="8"/>
+		<property name="RadiusBlocks" value="20"/>
+		<property name="RadiusEntities" value="20"/>
+		<property name="BlockDamage" value="5000"/>
+		<property name="EntityDamage" value="200"/>
+		<property class="DamageBonus">
+			<property name="earth" value="0"/>
+		</property>
+	</property>
+		</entity_class>
+
+
+<entity_class name="CopPack"> <!-- 71.72 -->
+	<property name="HideInSpawnMenu" value="true"/>
+	<property name="Mesh" value="@:Entities/LootContainers/zpackPrefab.prefab"/>
+	<property name="ModelType" value="Custom"/>
+	<property name="Prefab" value="Backpack"/>
+	<property name="Class" value="EntityLootContainer"/>
+	<property name="Parent" value="Backpack"/>
+	<property name="IsEnemyEntity" value="false"/>
+	<property name="TimeStayAfterDeath" value="1200"/>
+	<property name="LootList" value="CopPack"/>
+	<property name="Faction" value="none"/>
+</entity_class>
+
+<entity_class name="MutantCoyote" extends="animalCoyote">
+			<property name="SizeScale" value="2.6"/>
+			<property name="Tags" value="entity,Mutant,zombie"/>
+			<!-- <property name="Mesh" value="@:Entities/Zombies/Cop/ZCop.prefab"/> -->
+			<property name="ExperienceGain" value="30000"/>
+			<property name="Mass" value="1000"/>
+			<property name="Weight" value="850"/>
+			<property name="HasRagdoll" value="false"/>
+			<!-- XP strong -->
+			<property name="HandItem" value="MutantenItem"/>
+			<property name="LootDropEntityClass" value="CoyotePack"/>
+			<property name="LootDropProb" value="1"/>
+			<property name="DismemberMultiplierHead" value=".4"/><property name="DismemberMultiplierArms" value=".4"/><property name="DismemberMultiplierLegs" value=".4"/>
+			<property name="DeadBodyHitPoints" value="2000"/>
+			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+			<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="30"/> <!-- animalChicken -->
+			<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="10"/>
+			<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="60"/>
+			<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="20"/>
+			<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="5"/>
+			<property name="WalkType" value=".1"/>
+			<property name="MoveSpeedAggro" value="0.7, 0.8"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="7000"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+			</effect_group>
+		</entity_class>
+
+
+<entity_class name="CoyotePack"> <!-- 71.72 -->
+	<property name="HideInSpawnMenu" value="true"/>
+	<property name="Mesh" value="@:Entities/LootContainers/zpackPrefab.prefab"/>
+	<property name="ModelType" value="Custom"/>
+	<property name="Prefab" value="Backpack"/>
+	<property name="Class" value="EntityLootContainer"/>
+	<property name="Parent" value="Backpack"/>
+	<property name="IsEnemyEntity" value="false"/>
+	<property name="TimeStayAfterDeath" value="1200"/>
+	<property name="LootList" value="CoyotePack"/>
+	<property name="Faction" value="none"/>
+</entity_class>
+<entity_class name="MutantSamara" extends="zombieScreamer">
+			<property name="SizeScale" value="2.1"/>
+			<property name="Tags" value="entity,zombie,walker,boss,BAchiever,MutantSamara,boss" />
+			<property name="Mesh" value="@:Entities/Zombies/Screamer/ZScreamer.prefab"/>
+			<property name="ReplaceMaterial0" value="particleeffects/models/materials/p_glass"/>
+			<property name="ReplaceMaterial1" value="entities/resources/materials/oreshaleboulder"/>
+			<property name="SoundRandom" value="Enemies/Scout_Zombie/zombiefemalescoutalert"/>
+			<property name="SoundRandomTime" value="15.0"/>	
+			<property name="SoundAlert" value=""/>
+			<property name="SoundAttack" value="Enemies/Base_Zombie_Female/zombiefemalescoutattack"/>
+			<property name="SoundHurt" value="Enemies/Base_Zombie_Female/zombiefemalescoutpain"/>
+			<property name="SoundDeath" value="Enemies/Base_Zombie_Female/zombiefemalescoutdeath"/>
+			<property name="SoundSense" value=""/>
+			<property name="ExperienceGain" value="60000"/>
+			<property name="Mass" value="1000"/>
+			<property name="Weight" value="850"/>
+			<property name="HasRagdoll" value="false"/>
+			<!-- XP strong -->
+			<property name="WalkType" value="3"/>
+			<property name="HandItem" value="MutantenItem"/>
+			<property name="LootDropEntityClass" value="SamaraPack"/>
+			<property name="LootDropProb" value="1"/>
+			<property name="DismemberMultiplierHead" value=".4"/><property name="DismemberMultiplierArms" value=".4"/><property name="DismemberMultiplierLegs" value=".4"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="18000"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+			</effect_group>
+		</entity_class>
+
+<entity_class name="SamaraPack"> <!-- 71.72 -->
+	<property name="HideInSpawnMenu" value="true"/>
+	<property name="Mesh" value="@:Entities/LootContainers/zpackPrefab.prefab"/>
+	<property name="ModelType" value="Custom"/>
+	<property name="Prefab" value="Backpack"/>
+	<property name="Class" value="EntityLootContainer"/>
+	<property name="Parent" value="Backpack"/>
+	<property name="IsEnemyEntity" value="false"/>
+	<property name="TimeStayAfterDeath" value="1200"/>
+	<property name="LootList" value="SamaraPack"/>
+	<property name="Faction" value="none"/>
+</entity_class>
+
+<entity_class name="MutantVulture" extends="animalZombieVulture">
+			<property name="SizeScale" value="2.8"/>
+			<property name="Tags" value="entity,Mutant,zombie"/>
+			<property name="ExperienceGain" value="60000"/>
+			<property name="Mass" value="1000"/>
+			<property name="Weight" value="850"/>
+			<property name="HasRagdoll" value="false"/>
+			<!-- XP strong -->
+			<property name="HandItem" value="VItem"/>
+			<property name="LootDropEntityClass" value="VPack"/>
+			<property name="LootDropProb" value="1"/>
+			<property name="DismemberMultiplierHead" value=".4"/><property name="DismemberMultiplierArms" value=".4"/><property name="DismemberMultiplierLegs" value=".4"/>
+			<property name="DeadBodyHitPoints" value="2500"/>
+			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="20"/> <!-- animalZombieVulture -->
+			<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="90"/>
+			<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="18"/>
+			<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="6"/>
+
+
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="10000"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+			</effect_group>
+					<property class="Explosion">
+		<property name="ParticleIndex" value="8"/>
+		<property name="RadiusBlocks" value="20"/>
+		<property name="RadiusEntities" value="20"/>
+		<property name="BlockDamage" value="5000"/>
+		<property name="EntityDamage" value="200"/>
+		<property class="DamageBonus">
+			<property name="earth" value="0"/>
+		</property>
+	</property>
+		</entity_class>
+
+
+<entity_class name="VPack"> <!-- 71.72 -->
+	<property name="HideInSpawnMenu" value="true"/>
+	<property name="Mesh" value="@:Entities/LootContainers/zpackPrefab.prefab"/>
+	<property name="ModelType" value="Custom"/>
+	<property name="Prefab" value="Backpack"/>
+	<property name="Class" value="EntityLootContainer"/>
+	<property name="Parent" value="Backpack"/>
+	<property name="IsEnemyEntity" value="false"/>
+	<property name="TimeStayAfterDeath" value="1200"/>
+	<property name="LootList" value="VPack"/>
+	<property name="Faction" value="none"/>
+</entity_class>
+
+	</append>
+</configs>
